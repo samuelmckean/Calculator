@@ -7,8 +7,7 @@ class Calculator:
         window.title("Calculator")
 
         # create frame for display
-        frameDisplay = Frame(window)
-        frameDisplay.pack() # pack frame into window
+        frameDisplay = Frame(window).pack()
 
         # create and place label widget for displaying calculations
         display = Label(frameDisplay, text = "Hello")
@@ -46,8 +45,24 @@ class Calculator:
         button9.grid(row = 3, column = 3, padx = 5, pady = 5)
 
         button0 = Button(frameButtons, text = "0", command = buttonPress0)
-        button0.grid(row = 4, padx = 5, pady = 5)
+        button0.grid(row = 4, column = 2, padx = 5, pady = 5)
 
+        # place buttons +, -, *, / in button frame using grid manager
+        buttonAdd = Button(frameButtons, text = "+",
+                        command = buttonPressAdd).grid(row = 1,
+                        column = 4, padx = 10, pady = 5)
+        buttonSub = Button(frameButtons, text = "-",
+                        command = buttonPressSub).grid(row = 2,
+                        column = 4, padx = 10, pady = 5)
+        buttonMul = Button(frameButtons, text = "*",
+                        command = buttonPressMul).grid(row = 3,
+                        column = 4, padx = 10, pady = 5)
+        buttonDiv = Button(frameButtons, text = "/",
+                        command = buttonPressDiv).grid(row = 4,
+                        column = 4, padx = 10, pady = 5)
+
+        # 
+        
         # create event loop
         window.mainloop() 
 

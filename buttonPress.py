@@ -18,3 +18,12 @@ def buttonPress9(self):
     a = 9
 def buttonPress0(self):
     a = 0
+
+def buttonPressAdd(self):
+    a = 0
+def buttonPressSub(self):
+    a = 0
+def buttonPressMul(self):
+    a = 0
+def buttonPressDiv(self):
+    a = 0
