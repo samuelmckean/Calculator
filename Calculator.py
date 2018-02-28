@@ -1,6 +1,8 @@
 from tkinter import *
 from buttonPress import *
 
+number = ""
+
 class Calculator:
     def __init__(self):
         window = Tk()
@@ -10,17 +12,19 @@ class Calculator:
         frameDisplay = Frame(window).pack()
 
         # create and place label widget for displaying calculations
-        display = Label(frameDisplay, text = "Hello")
+        display = Label(frameDisplay, text = number)
 
         # create frame for buttons
         frameButtons = Frame(window)
         frameButtons.pack() # pack button frame into window
         
         # place buttons 1-0 in button frame using grid manager
-        button1 = Button(frameButtons, text = "1", command = buttonPress1)
+        button1 = Button(frameButtons, text = "1",
+                    command = buttonPress1(number))
         button1.grid(row = 1, column = 1, padx = 5, pady = 5)
 
-        button2 = Button(frameButtons, text = "2", command = buttonPress2)
+        button2 = Button(frameButtons, text = "2",
+                    command = buttonPress2(number))
         button2.grid(row = 1, column = 2, padx = 5, pady = 5)
 
         button3 = Button(frameButtons, text = "3", command = buttonPress3)
@@ -60,11 +64,9 @@ class Calculator:
         buttonDiv = Button(frameButtons, text = "/",
                         command = buttonPressDiv).grid(row = 4,
                         column = 4, padx = 10, pady = 5)
-
-        # 
-        
+    
         # create event loop
-        window.mainloop() 
+        window.mainloop()
 
 
 Calculator() # create GUI
