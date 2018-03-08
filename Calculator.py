@@ -1,5 +1,6 @@
 from tkinter import *
 from buttonPress import *
+from CalcNumber import CalcNumber
 
 number = ""
 
@@ -12,7 +13,8 @@ class Calculator:
         frameDisplay = Frame(window).pack()
 
         # create and place label widget for displaying calculations
-        display = Label(frameDisplay, text = number)
+        number = StringVar()
+        display = Entry(frameDisplay, textvariable = number)
 
         # create frame for buttons
         frameButtons = Frame(window)
